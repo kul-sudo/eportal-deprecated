@@ -1,9 +1,10 @@
-import global_items
 from global_items import handle, bodies
 from math import dist
 from config import *
 from tkinter import NE, NW, SE, SW
 from time import time
+
+import global_items
 
 def show_tip(tip: str):
     '''Setting the text of the area of tips to tip.'''
