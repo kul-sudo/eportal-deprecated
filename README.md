@@ -23,7 +23,7 @@ Whenever a body goes over a plant or another body, the body that did it gets 100
 Whenever a body dies, a cross appears on its spot.
 
 # The process of the whole program
-At the start of the program, you can see a progress bar going onwards. While the progress bar is going onwards, the AI tries to figure out which species should survive the evolution.
+At the start of the program, you can see a progress bar going onwards. While the progress bar is going onwards, the [AI](#ai) tries to figure out which species should survive the evolution.
 <br>
 
 After the progress bar finishes, you can click the body the descendants of which, in fact, the species of which will survive the evolution. To select the right body, you can hover your mouse over the body and see its properties. To see the vision distance more clearly, in the checkbox beneath "Which body properties to display", you can select "Vision distance" and see the circles around bodies which feature the vision distance.
