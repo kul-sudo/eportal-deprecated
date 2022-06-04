@@ -36,14 +36,14 @@ When the evolution finishes, you are informed whether it finished with a draw or
 <br>
 
 # Controls <a id="controls"></a>
-At the bottom part of the window, there can found 3 buttons and one drop-down list:
+At the bottom part of the window, there can found three buttons and one drop-down list:
 <br>
 * the drop-down list beneath "Which body properties to display": use this drop-down list for selecting which property you want to be displayed near each body on the evolution field
 * ? (question mark): calling the window with the guidance
 * refresh: refreshing the evolution
 * ▷/⏸︎: press ▷ to start/resume the evolution; press ⏸︎ to pause the evolution
 
-At the right part of the window, there can be found 2 sections: Selected species and Evolution:
+At the right part of the window, there can be found two sections: Selected species and Evolution:
 
 Selected species:
 
