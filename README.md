@@ -100,7 +100,7 @@ AI is used when the process of selecting the species the AI thinks will survive 
 The averaged percent from 2048 evolutions is 59.8%
 
 ## Is the AI used beyond the the process of selecting the species?
-it's not. However, the species selected by the AI occasionally uses the algorithm described in [check out the "Selected species" section of Controls](#controls).
+it's not. However, the species selected by the AI occasionally uses the algorithm described in [the "Selected species" section of Controls](#controls).
 
 # Smart chasing <a id="smart-behaviour"></a>
 Smart plant chasing:
