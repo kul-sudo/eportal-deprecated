@@ -57,7 +57,7 @@ At the right part of the window, there can be found two sections: Selected speci
 
 * Evolution:
 
-  * scale beneath "Time-lapse": adjusting the extent of time-lapse
+  * Scale beneath "Time-lapse": adjusting the extent of time-lapse
   * Hold the evolution start back to select a body: holding the start of the further evolutions back for selecting the species you think will surive the evolution
   * Display averaged properties at the end of evolution: displaying averaged properties of the progenitor of the survived species
 
