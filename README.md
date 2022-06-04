@@ -47,19 +47,19 @@ At the right part of the window, there can be found two sections: Selected speci
 
 * Selected species:
 
-_"Selected species" is only active if you have selected one of the species before the evolution._
+  _"Selected species" is only active if you have selected one of the species before the evolution._
 
-* Don't eat plants: that the species you think will survive the evolution must not eat plants
-* Don't eat bodies: the species you think will survive the evolution must not eat bodies
-* Ignore chasers: the species you think will survive the evolution must not flee from the bodies that are chasing them
-* Smart plant chasing: [check out "Smart behaviour"](#smart-behaviour)
-* Smart body chasing: [check out "Smart behaviour"](#smart-behaviour)
+  * Don't eat plants: that the species you think will survive the evolution must not eat plants
+  * Don't eat bodies: the species you think will survive the evolution must not eat bodies
+  * Ignore chasers: the species you think will survive the evolution must not flee from the bodies that are chasing them
+  * Smart plant chasing: [check out "Smart behaviour"](#smart-behaviour)
+  * Smart body chasing: [check out "Smart behaviour"](#smart-behaviour)
 
 * Evolution:
 
-* scale beneath "Time-lapse": adjusting the extent of time-lapse
-* Hold the evolution start back to select a body: holding the start of the further evolutions back for selecting the species you think will surive the evolution
-* Display averaged properties at the end of evolution: displaying averaged properties of the progenitor of the survived species
+  * scale beneath "Time-lapse": adjusting the extent of time-lapse
+  * Hold the evolution start back to select a body: holding the start of the further evolutions back for selecting the species you think will surive the evolution
+  * Display averaged properties at the end of evolution: displaying averaged properties of the progenitor of the survived species
 
 # More about properties of bodies <a id="more-properties"></a>
 Inborn properties:
