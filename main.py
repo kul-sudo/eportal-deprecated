@@ -1,4 +1,4 @@
-from tkinter import FLAT, N, NORMAL, DISABLED, GROOVE, HORIZONTAL, LEFT, RIGHT, TOP, W, BooleanVar, Button, Canvas, Frame, PhotoImage, StringVar, Label, LabelFrame, Scale
+from tkinter import FLAT, N, NORMAL, DISABLED, HORIZONTAL, LEFT, RIGHT, TOP, W, BooleanVar, Button, Canvas, Frame, PhotoImage, StringVar, Label, LabelFrame, Scale
 from tkinter.ttk import Checkbutton, OptionMenu
 from tkinter.font import Font
 

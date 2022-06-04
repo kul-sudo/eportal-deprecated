@@ -3,7 +3,6 @@ from time import time
 
 from config import *
 from images import CROSS_IMAGE
-from global_items import handle
 
 import global_items
 

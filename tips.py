@@ -1,9 +1,8 @@
-import tkinter
 import global_items
 from global_items import handle, bodies
 from math import dist
 from config import *
-from tkinter import NE, NW, SE, SW, Toplevel
+from tkinter import NE, NW, SE, SW
 from time import time
 
 def show_tip(tip: str):
