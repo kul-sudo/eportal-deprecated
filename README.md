@@ -100,7 +100,7 @@ Energy is gained by eating a plant or another body - plant gives 100 points to y
 
 # Artificial Intelligence <a id="ai"></a>
 ## Where is the AI used?
-AI is used when the process of selecting the species the AI thinks will survive the evolution takes place. One of the bodies has a shape of a square and this square-shaped body is the one that will have its species survive in the evolution.
+AI is used for selecting the species it thinks will survive the evolution. One of the bodies has a shape of a square and this square-shaped body is the one that will have its species survive in the evolution.
 
 ## How often does the AI predict the survivor species correctly?
 The averaged percent from 2048 evolutions is 59.8%
