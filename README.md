@@ -32,7 +32,7 @@ After the progress bar finishes, you can click the body the species of which you
 
 If you click a circle, then this circle will turn into a triangle, and the bodies of further generations of the species of this body will also be triangles.
 
-If you click a square-shaped body (the body the species of which the AI thinks will survive the evolution), then the shape of this body will become a rhombus and you will not able to adjust the behaviour of the species of this body.
+If you click a square-shaped body (the body the species of which the AI thinks will survive the evolution), then the shape of this body will become a rhombus and you will not able to adjust the behaviour of the species of this body. Just like with triangles, the further generations of the species of this body will be rhombuses.
 
 To select the right body, you can hover your mouse over the body and see its properties. And, of course, you can rely upon the AI and select the body the species of which the AI thinks will survive the evolution.
 
