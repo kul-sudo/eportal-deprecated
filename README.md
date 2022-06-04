@@ -72,7 +72,7 @@ Inborn properties:
 For the first generation, the properties are determined either equiprobably or as a deviation from average values. The further generations inherit the properties of their parents with certain deviations.
 
 ## Food preference <a id="more-food-preference"></a>
-The algorithm of defining what is going to be eaten by a body:
+The algorithm of defining what is going to be eaten by a body:\
 Plant-eaters try to find plants within their vision distance, but if there are no plants within their vision distance, then they try to find bodies within their vision distance, and the same, but vice versa, for body-eaters. Neither body-eaters nor plant-eaters betray bodies with the same species: if the plant or the body is already being followed by a body with the same species, then this body or plant is qualified as unsuitable.
 
 ## Speed <a id="more-speed"></a>
