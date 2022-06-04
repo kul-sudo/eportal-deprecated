@@ -2,8 +2,6 @@
 
 ![logo](https://user-images.githubusercontent.com/95244851/172011644-34148bdb-7509-4fec-8ba4-ce3158b5f1bf.png)
 
-<br>
-
 # What is eportal?
 Eportal can be cosidered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the [AI](#ai) in guessing which species will survive the evolution.
 <br>
