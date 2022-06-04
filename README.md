@@ -37,16 +37,19 @@ When the evolution finishes, you are informed whether it finished with a draw or
 
 # Controls <a id="controls"></a>
 At the bottom part of the window, there can found three buttons and one drop-down list:
-<br>
+
 * the drop-down list beneath "Which body properties to display": use this drop-down list for selecting which property you want to be displayed near each body on the evolution field
 * ? (question mark): calling the window with the guidance
 * refresh: refreshing the evolution
 * ▷/⏸︎: press ▷ to start/resume the evolution; press ⏸︎ to pause the evolution
+<br>
 
 At the right part of the window, there can be found two sections: Selected species and Evolution:
 
 * Selected species:
 
+  ![image](https://user-images.githubusercontent.com/95244851/172018546-55176a49-2558-4ffd-bdea-7153da9df96d.png)
+  
   _"Selected species" is only active if you have selected one of the species before the evolution._
 
   * Don't eat plants: that the species you think will survive the evolution must not eat plants
@@ -57,6 +60,7 @@ At the right part of the window, there can be found two sections: Selected speci
 
 * Evolution:
 
+  ![image](https://user-images.githubusercontent.com/95244851/172018578-b5f118f8-0d9d-4533-8463-d0d870171383.png)
   * Scale beneath "Time-lapse": adjusting the extent of time-lapse
   * Hold the evolution start back to select a body: holding the start of the further evolutions back for selecting the species you think will surive the evolution
   * Display averaged properties at the end of evolution: displaying averaged properties of the progenitor of the survived species
@@ -93,10 +97,10 @@ Energy is gained by eating a plant or another body - plant gives 100 points to y
 AI is used when the process of selecting the species the AI thinks will survive the evolution takes place. One of the bodies has a shape of a square and this square-shaped body is the one that will have its species survive in the evolution.
 
 ## How often does the AI predict the survivor species correctly?
-The averaged percent from 2048 evolution is 59.8%
+The averaged percent from 2048 evolutions is 59.8%
 
 ## Is the AI used beyond the the process of selecting the species?
-it's not. However, the species selected by the AI occasionally use [this](#change-behaviour) algorithm
+it's not. However, the species selected by the AI occasionally uses the algorithm described in [check out the "Selected species" section of Controls](#controls).
 
 # Smart chasing <a id="smart-behaviour"></a>
 Smart plant chasing:
