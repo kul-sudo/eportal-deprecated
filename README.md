@@ -103,10 +103,10 @@ Energy is gained by eating a plant or another body - plant gives 100 points to y
 AI is used for selecting the species it thinks will survive the evolution. One of the bodies has a shape of a square, and this square-shaped body is the one the AI thinks will will have its species survive the evolution.
 
 ## How often does the AI predict the survivor species correctly?
-The averaged percent from 2000 evolutions is 60% (note that this percent is taken from evolutions in which there was no species selected by the user)
+The averaged percent from 2000 evolutions is 60% (note that this percent is taken from evolutions in which there was no species selected by the user).
 
 ## Is the AI used beyond the the process of selecting the species?
-it's not. However, the species selected by the AI occasionally uses the algorithm described in [the "Selected species" section of Controls](#controls).
+It's not. However, the species selected by the AI occasionally uses the algorithm described in [the "Selected species" section of Controls](#controls).
 
 # Smart chasing <a id="smart-behaviour"></a>
 Smart plant chasing:
