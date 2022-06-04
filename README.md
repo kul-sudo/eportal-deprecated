@@ -13,7 +13,8 @@ And one of the most important things is that you don't have to struggle to make 
 <br>
 
 # The process of evolution
-Some of the bodies prefer eating plants and some of them prefer eating other bodies. The plant-eaters try to find a suitable plant, but if they don't find a suitable plant, then they try to find a suitable body, and the same, but vice versa, for body-eaters. After a body-eater finds a body, it makes sure that body is weaker (has a lower energy). Note that the behaviour of bodies can be changed ([check out the "Selected species" section of Controls](#controls))
+Some of the bodies prefer eating plants and some of them prefer eating other bodies. The plant-eaters try to find a suitable plant, but if they don't find a suitable plant, then they try to find a suitable body, and the same, but vice versa, for body-eaters. After a body-eater finds a body, it makes sure that body is weaker (has a lower energy).
+Note that the behaviour of the bodies of the selected species can be changed ([check out the "Selected species" section of Controls](#controls))
 <br>
 
 Properties is also an important part of the process of evolution, so it is recommended to check out [More about properties of bodies](#more-properties).
