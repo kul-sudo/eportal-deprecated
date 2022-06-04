@@ -43,7 +43,7 @@ At the bottom part of the window, there can found 3 buttons and one drop-down li
 * refresh: refreshing the evolution
 * ▷/⏸︎: press ▷ to start/resume the evolution; press ⏸︎ to pause the evolution
 
-At the right part of the window, there can be found two sections: Selected species and Evolution:
+At the right part of the window, there can be found 2 sections: Selected species and Evolution:
 
 Selected species:
 
