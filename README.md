@@ -113,11 +113,11 @@ The averaged percent from 2000 evolutions is 60% (note that this percent is take
 It's not. However, the species selected by the AI occasionally uses the algorithm described in [the "Selected species" section of Controls](#controls).
 
 # Smart chasing <a id="smart-behaviour"></a>
-Smart plant chasing:
-* Bodies calculate if it is profitable to spend a certain amount of energy to get a certain amount of energy from a plant. If the spent energy is less than the energy that can be received, then the body does not attempt to catch that plant
-* if a body from a different species is following that plant, if it can catch that plant sooner, then nothing is done
+* Smart plant chasing:
+  * Bodies calculate if it is profitable to spend a certain amount of energy to get a certain amount of energy from a plant. If the spent energy is less than the energy that can be received, then the body does not attempt to catch that plant
+  * if a body from a different species is following that plant, if it can catch that plant sooner, then nothing is done
 
-Smart body chasing:
-* Bodies calculate if it is profitable to spend a certain amount of energy to get a certain amount of energy from a body. If the spent energy is less than the energy that can be received, then the body does not attempt to catch that body
-* If the body which is meant to be caught will die while it is being caught, then nothing is done
-* If a body from a different species is following that body, if it can catch that body sooner, then nothing is done
+* Smart body chasing:
+  * Bodies calculate if it is profitable to spend a certain amount of energy to get a certain amount of energy from a body. If the spent energy is less than the energy that can be received, then the body does not attempt to catch that body
+  * If the body which is meant to be caught will die while it is being caught, then nothing is done
+  * If a body from a different species is following that body, if it can catch that body sooner, then nothing is done
