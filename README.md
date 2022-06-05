@@ -18,7 +18,7 @@ Some of the bodies prefer eating plants and some of them prefer eating other bod
 Note that the behaviour of the bodies of the selected species can be changed ([check out the "Selected species" section of Controls](#controls))
 <br>
 
-Properties is also an important part of the process of evolution, so it is recommended to check out [More about properties of bodies](#more-properties).
+Properties is also an important part of the process of evolution, so it is recommended to check out [more about properties of bodies](#more-properties).
 
 Whenever a body goes over a plant or another body, the body that did it gets 100 points to its energy if a plant was trodden, otherwise it gets the energy of the body that was trodden.
 
