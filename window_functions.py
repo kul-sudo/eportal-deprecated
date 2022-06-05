@@ -3,9 +3,9 @@ from math import dist, ceil
 from tkinter.ttk import Progressbar
 
 from config import *
-from draw_erase import change_shape, handle_body_properties, handle_circles
+from draw_erase import change_shape, handle_body_properties, prepare_draw_handle
 from global_items import handle, window_commands, bodies, evolution_status, window, checkbuttons_for_triangle
-from tips import info_handle, mouse_clicked_on_body
+from tips import info_handle, mouse_clicked_on_body, prepare_info_handle
 
 import global_items
 
@@ -25,7 +25,7 @@ def pause_mode(enable:bool):
         global_items.start_pause_button.configure(text=START_TEXT)
     else:
         window_commands['run/pause'] = RUN
-        global_items.start_pause_button.configure(text=PAUSE_TEXT)    
+        global_items.start_pause_button.configure(text=PAUSE_TEXT)
     window.update()
 
 
@@ -65,9 +65,10 @@ def user_select_body():
     @handle
     def selected() -> bool: # A separate function is required for the decorator to work along with it
         handle_body_properties()
-        handle_circles()
-        info_handle(tips_for_pause=False)
+        info_handle()
         return window_commands['run/pause'] == RUN
+    prepare_info_handle()
+    prepare_draw_handle()
     while not selected():
         continue
 

@@ -6,19 +6,17 @@ from config import *
 from plants import create_plant
 from crosses import delete_old_cross
 from bodies_functions import progenitor_properties
-from draw_erase import handle_body_properties, handle_circles, update_arrows, update_crosses, update_plants, update_bodies
+from draw_erase import prepare_draw_handle, handle_body_properties, update_arrows, update_crosses, update_plants, update_bodies
 from global_items import data_for_smart_body, handle, window_commands, bodies, evolution_status
-from tips import info_handle, erase_information, show_tip, show_evolution_number
+from tips import prepare_info_handle, info_handle, erase_information, show_tip, show_evolution_number
 from window_functions import handle_checkbuttons, disable_checkbuttons_checkmarks
 from bodies_functions import no_triangles
-
 import global_items
 
 fps_clock = Clock()
 
 def one_evolution():
     handle_body_properties()
-    handle_circles()
     data_for_smart_body['actions'] = 0
 
     while True:
@@ -55,18 +53,20 @@ def one_evolution_step():
     delete_old_cross()
     update_crosses()
     handle_body_properties()
-    handle_circles()
     global_items.canvas.update()
     if no_triangles():
       handle_checkbuttons(DISABLED)
       disable_checkbuttons_checkmarks()
     if window_commands['run/pause'] == PAUSE:
+        evolution_status.description = ON_PAUSE
         show_tip('Put your cursor on a body.')
+        prepare_info_handle()
+        prepare_draw_handle()
         while window_commands['run/pause'] == PAUSE:
             handle_body_properties()
-            handle_circles()
-            info_handle(tips_for_pause=True)
-        show_evolution_number()    
+            info_handle()
+        evolution_status.description = EVOLUTION
+        show_evolution_number()
 
 # Analysis
 @handle

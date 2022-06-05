@@ -2,7 +2,7 @@ from typing import Callable
 from tkinter import LAST, S
 
 from config import *
-from global_items import distance_between_objects, bodies, plants, window_commands
+from global_items import evolution_status, distance_between_objects, bodies, plants, window_commands
 from crosses import crosses_list
 
 import config
@@ -47,7 +47,8 @@ def update_plants():
         plant.image_reference = global_items.canvas.create_image(
             plant.x+CANVAS_BORDER,
             plant.y+CANVAS_BORDER,
-            image=global_items.plant_shape
+            image=global_items.plant_shape,
+            tags='plant'
         )
 
     drawn_plants = plants.copy()
@@ -67,7 +68,8 @@ def update_crosses():
         cross.image_reference = global_items.canvas.create_image(
             cross.x+CANVAS_BORDER,
             cross.y+CANVAS_BORDER,
-            image=global_items.cross_shape
+            image=global_items.cross_shape,
+            tags='cross'
         )
     drawn_crosses = crosses_set.copy()
 
@@ -86,7 +88,7 @@ def append_arrow(body: object):
     global_items.canvas.create_line(
         arrow_start_x+CANVAS_BORDER, arrow_start_y+CANVAS_BORDER,
         prey.x+CANVAS_BORDER, prey.y+CANVAS_BORDER,
-        arrow=LAST, arrowshape=(5, 5, 5), tags='arrow', dash=(4, 1))  
+        arrow=LAST, arrowshape=(5, 5, 5), tags='arrow', dash=(4, 1))
 
 def update_arrows():
     global_items.canvas.delete('arrow')
@@ -144,21 +146,26 @@ def erase_circles():
     global_items.canvas.delete('circle')
 
 def update_vision_distance_circles():
-    erase_circles()
     for body in bodies:
         draw_one_vision_distance_circle(body)
 
-def handle_circles():
-    if window_commands['to-show-selected-property'] == 'Vision distance':
-        update_vision_distance_circles()
-    else:
-        erase_circles()
+def prepare_draw_handle():
+    global privious_window_command 
+    privious_window_command = None
 
 # Writing properties of bodies over them
+
 def update_body_properties():
+    global privious_window_command
+    new_window_command = window_commands['to-show-selected-property']
+    if evolution_status.description in (USER_SELECTING_BODY, ON_PAUSE):
+        if new_window_command == privious_window_command:
+            return
+        privious_window_command = new_window_command    
     erase_body_properties()
+    erase_circles()
     for body in bodies:
-        match window_commands['to-show-selected-property']:
+        match new_window_command:
             case '"Newly born" if newly born':
                 text = 'Newly born' if body.current_lifetime < NEWLY_BORN_PERIOD and body.generation_n != 0 else ''
             case 'Current energy':
@@ -175,6 +182,9 @@ def update_body_properties():
                 text = len(tuple(filter(lambda body_: body_.species == body.species, bodies)))
             case 'ID of the species':
                 text = body.species_id
+            case 'Vision distance':
+                update_vision_distance_circles()
+                return
                 
         center_x, center_y = body.x+CANVAS_BORDER, body.y+CANVAS_BORDER
         global_items.canvas.create_text(
@@ -188,7 +198,7 @@ def erase_body_properties():
     global_items.canvas.delete('property')
 
 def handle_body_properties():
-    if window_commands['to-show-selected-property'] not in ('Nothing', 'Vision distance'):
+    if window_commands['to-show-selected-property'] != 'Nothing':
         update_body_properties()
     else:
         erase_body_properties()

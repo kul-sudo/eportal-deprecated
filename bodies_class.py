@@ -125,7 +125,7 @@ class Body: # The class of the Bodies
             else:
                 found_plant = self.find_plant()
         else:
-            found_body = self.find_body()       
+            found_body = self.find_body()
             found_plant = self.find_plant()
 
         if found_body is None and found_plant is None:

@@ -1,7 +1,7 @@
-from global_items import handle, bodies
+from global_items import handle, bodies, evolution_status
 from math import dist
 from config import *
-from tkinter import NE, NW, SE, SW
+from tkinter import NE, NW, SE, SW, TclError
 from time import time
 
 import global_items
@@ -29,40 +29,83 @@ def show_tip_for_body(body: object):
 
 def mouse_clicked_on_body(body: object):
     '''Altering the text of the tip instantaneously.'''
-    show_tip_for_body(body)
-
-GAP = 3
-DELAY = 1
-
-previous_display_time = float('-inf')
+    global selected_body
+    if selected_body is not None:
+        show_tip_for_body(body)
 
 def erase_information():
     global_items.canvas.delete('information')
 
-@handle
-def info_handle(tips_for_pause: bool):
-    '''Handling the mouse hovering upon bodies and displaying all of the needed info.'''
-    global previous_display_time
-    now = time()
-    if now < previous_display_time + DELAY:
-        if global_items.canvas.gettags('information') != (): # If there is already a box displayed on canvas, then it is not time to show another box
-            return
-    if not tips_for_pause:
-        show_tip('Put your cursor on a body.\nYou can click the body the descendants of which you think will survive the evolution.')
-    erase_information()
+GAP = 3
+DELAY = 0.3
+
+def mouse_over():
     # Finding the coordinates of the mouse
     canvas_mouse_x = global_items.canvas.winfo_pointerx() - global_items.canvas.winfo_rootx()
     canvas_mouse_y = global_items.canvas.winfo_pointery() - global_items.canvas.winfo_rooty()
     for body in bodies:
         if dist((canvas_mouse_x, canvas_mouse_y),
                 (body.x+CANVAS_BORDER, body.y+CANVAS_BORDER)) <= HALF_BODY_SIZE*1.2:
-            selected_body = body
-            previous_display_time = now
-            break
-    else:  
+            return body
+    return None
+
+def prepare_info_handle():
+    global previous_hovered_body, hovered_start, selected_body, body_info_shown_for, previous_window_command
+    previous_hovered_body = None
+    selected_body = None
+    body_info_shown_for = None
+    hovered_start = float('-inf')
+    previous_window_command = None
+
+def select_body():
+    global previous_hovered_body, hovered_start, selected_body
+    hovered_over = mouse_over()
+    if hovered_over is None:
+        previous_hovered_body = None
+        selected_body = None
+    else:
+        if hovered_over is previous_hovered_body:
+            if time() >= hovered_start + DELAY:
+                selected_body = hovered_over
+        else:
+            previous_hovered_body = hovered_over
+            hovered_start = time()
+            selected_body = None
+
+def raise_information_window():
+    try: 
+        global_items.canvas.tag_raise('information', 'circle')
+    except TclError:
+        pass
+
+@handle
+def info_handle():
+    '''Handling the mouse hovering upon bodies and displaying all of the needed info.'''
+    global selected_body, body_info_shown_for
+    select_body()
+    show_tips()
+    raise_information_window()
+    global_items.canvas.update()
+    if selected_body is None:
+        body_info_shown_for = None
+        erase_information()
         return
-    if not tips_for_pause:    
+    if body_info_shown_for is selected_body:
+        return
+    body_info_shown_for = selected_body   
+    show_info()
+
+def show_tips():
+    global selected_body
+    if evolution_status.description == ON_PAUSE:
+       return
+    if selected_body is None:
+        show_tip('Put your cursor on a body.\nYou can click the body the descendants of which you think will survive the evolution.')
+    else:
         show_tip_for_body(selected_body)
+
+def show_info():    
+    global selected_body, information_text, border
     # Making some corrections to the x and the y of the information window because clicks on the body are considered clicks on the window whenever it overlaps the body, therefore the clicks are not registered
     if selected_body.x >= HALF_EVOLUTION_FIELD_SIZE['width'] and selected_body.y >= HALF_EVOLUTION_FIELD_SIZE['height']:
         corner, dx, dy = SE, -HALF_BODY_SIZE, -HALF_BODY_SIZE
@@ -100,3 +143,4 @@ def info_handle(tips_for_pause: bool):
         estimated_info_box_size[3]+GAP),
         tags='information', fill='white')
     global_items.canvas.tag_raise(information_text, border)
+  
