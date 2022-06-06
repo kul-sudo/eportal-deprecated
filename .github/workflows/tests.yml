@@ -8,10 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-versions: [3.10.4]
+        runs-on: [ubuntu-latest, macos-latest, windows-latest, linux-latest]
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v2
       - name: Installing Python
