@@ -24,14 +24,15 @@ def create_shape_bodies(body: object, shape: Callable) -> int:
 def update_bodies():
     global_items.canvas.delete('body')
     for body in bodies:
-        if body.shape == config.CIRCLE:
-            body.image_reference = create_shape_bodies(body, global_items.canvas.create_oval)
-        elif body.shape == config.SQUARE:
-            body.image_reference = create_shape_bodies(body, global_items.canvas.create_rectangle)
-        elif body.shape == config.TRIANGLE:
-            draw_body_triangle(body)
-        elif body.shape == config.RHOMBUS:
-            draw_body_rhombus(body)
+        match body.shape:
+            case config.CIRCLE:
+                body.image_reference = create_shape_bodies(body, global_items.canvas.create_oval)
+            case config.SQUARE:
+                body.image_reference = create_shape_bodies(body, global_items.canvas.create_rectangle)
+            case config.TRIANGLE:
+                draw_body_triangle(body)
+            case config.RHOMBUS:
+                draw_body_rhombus(body)
 
 # Plants
 drawn_plants: set[object] = set()
