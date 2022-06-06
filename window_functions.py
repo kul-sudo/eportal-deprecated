@@ -1,5 +1,5 @@
-from tkinter import NORMAL, DISABLED
 from math import dist, ceil
+from tkinter import NORMAL, DISABLED
 from tkinter.ttk import Progressbar
 
 from config import *

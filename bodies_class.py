@@ -2,7 +2,7 @@ from random import random
 from crosses import add_cross
 
 from config import *
-from global_items import data_for_smart_body, handle, distance_between_objects, random_attribute, bodies, plants, window_commands
+from global_items import handle, distance_between_objects, random_attribute, bodies, plants, window_commands, data_for_smart_body
 import global_items
 
 class BodyStatus:
