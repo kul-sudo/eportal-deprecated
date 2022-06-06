@@ -17,12 +17,8 @@ def select_ai_survivor() -> object:
     show_tip('Working on the prediction of AI...')
 
     # Storing the initial states of plants and bodies
-    bodies_copy = []
-    for body in bodies:
-        bodies_copy.append(deepcopy(body))
-    plants_copy = []
-    for plant in plants:
-        plants_copy.append(deepcopy(plant))
+    bodies_copy = [deepcopy(body) for body in bodies]
+    plants_copy = [deepcopy(plant) for plant in plants]
 
     # Modelling the evolution
     data_for_smart_body['steps'] = 0
@@ -61,7 +57,7 @@ def select_ai_survivor() -> object:
 
     max_descendants_by_id = max( # Returns the ID
         (dict_key for dict_key in survived_bodies_dict_by_id),
-        key=lambda x: survived_bodies_dict_by_id[x]
+        key=survived_bodies_dict_by_id.get
     )
     
     for body in bodies:
