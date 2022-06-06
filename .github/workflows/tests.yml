@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         python-versions: [3.10.4]
-        runs-on: [ubuntu-latest, windows-latest, linux-latest]
+        runs-on: [ubuntu-latest, windows-latest, linux]
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v2
