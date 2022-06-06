@@ -22,7 +22,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Running flake8
-        run: flake8 .
       - name: Running mypy
         run: mypy .
