@@ -9,12 +9,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-versions: [3.8, 3.9]
     steps:
       - uses: actions/checkout@v2
       - name: Installing Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9.0
+          python-version: ${{matrix.python_versions}}
       - name: Installing dependencies
         run: |
           python -m pip install --upgrade pip
