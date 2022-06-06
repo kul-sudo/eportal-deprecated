@@ -114,7 +114,7 @@ def show_progress_bar():
         HALF_EVOLUTION_FIELD_SIZE['height'],
         window=progress_bar
     )
-                
+    
     previous_value = 0
 
 def update_progress(to_show: float):

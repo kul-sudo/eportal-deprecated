@@ -136,7 +136,7 @@ class Body: # The class of the Bodies
         elif found_body is not None and found_plant is None:
             self.status.description, self.status.parameter = found_body
         else:
-            if self.food_preference == BODY:       
+            if self.food_preference == BODY:
                 self.status.description, self.status.parameter = found_body
             else:
                 self.status.description, self.status.parameter = found_plant    

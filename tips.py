@@ -104,7 +104,7 @@ def show_tips():
     else:
         show_tip_for_body(selected_body)
 
-def show_info():    
+def show_info():
     global selected_body, information_text, border
     # Making some corrections to the x and the y of the information window because clicks on the body are considered clicks on the window whenever it overlaps the body, therefore the clicks are not registered
     if selected_body.x >= HALF_EVOLUTION_FIELD_SIZE['width'] and selected_body.y >= HALF_EVOLUTION_FIELD_SIZE['height']:

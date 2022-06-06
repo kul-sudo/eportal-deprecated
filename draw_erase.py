@@ -198,7 +198,8 @@ def erase_body_properties():
     global_items.canvas.delete('property')
 
 def handle_body_properties():
-    if window_commands['to-show-selected-property'] != 'Nothing':
-        update_body_properties()
-    else:
+    if window_commands['to-show-selected-property'] == 'Nothing':
         erase_body_properties()
+        erase_circles()
+    else:
+        update_body_properties()
