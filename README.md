@@ -1,5 +1,3 @@
-# eportal - simulation of evolution with a bit of AI
-
 ![logo](https://user-images.githubusercontent.com/95244851/172011644-34148bdb-7509-4fec-8ba4-ce3158b5f1bf.png)
 
 # What is eportal?
