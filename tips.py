@@ -100,7 +100,7 @@ def show_tips():
     if evolution_status.description == ON_PAUSE:
        return
     if selected_body is None:
-        show_tip('Put your cursor on a body.\nYou can click the body the descendants of which you think will survive the evolution.')
+        show_tip('Put your cursor on a body.\nYou can click the body the species of which you think will survive the evolution.')
     else:
         show_tip_for_body(selected_body)
 

@@ -1,18 +1,11 @@
 HELP_TEXT = \
 '''
-You can also see the guidance on the GitHub page of eportal: https://github.com/kul-sudo/eportal
-
-WHAT IS EPORTAL?
-Eportal can be cosidered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the AI in guessing which species will survive the evolution.
-
-When the evolution begins, great battles begin along with it; bodies do their best to populate as much room as possible for their species to win; some of them become passive, eating plants and procreating, some of them become aggressive, trying to attack the bodies of other species.
-
-And one of the most important things is that you don't have to struggle to make out which species is winning and which one is losing, because the graphics are extremely clear and plain.
-
 THE PROCESS OF EVOLUTION
-Some of the bodies prefer eating plants and some of them prefer eating other bodies. The plant-eaters try to find a suitable plant, but if they don't find a suitable plant, then they try to find a suitable body, and the same, but vice versa, for body-eaters. After a body-eater finds a body, it makes sure that body is weaker (has a lower energy). Note that the behaviour of bodies can be changed (check out the "Selected species" section of CONTROLS)
+Some of the bodies prefer eating plants and some of them prefer eating other bodies. The plant-eaters try to find a suitable plant, but if they don't find a suitable plant, then they try to find a suitable body, and the same, but vice versa, for body-eaters. After a body-eater finds a body, it makes sure that body is weaker (has a lower energy).
 
-Properties is also an important part of the process of evolution, so it is recommended to check out MORE ABOUT PROPERTIES OF BODIES.
+Note that the behaviour of the bodies of the selected species can be changed (check out the "Selected species" section of CONTROLS)
+
+Properties is also an important part of the process of evolution, so it is recommended to check out MORE ABOUT PROPERTIES OF BODIES
 
 Whenever a body goes over a plant or another body, the body that did it gets 100 points to its energy if a plant was trodden, otherwise it gets the energy of the body that was trodden.
 
@@ -21,7 +14,15 @@ Whenever a body dies, a cross appears on its spot.
 THE PROCESS OF THE WHOLE PROGRAM
 At the start of the program, you can see a progress bar going onwards. While the progress bar is going onwards, the AI tries to figure out which species should survive the evolution.
 
-After the progress bar finishes, you can click the body the descendants of which, in fact, the species of which will survive the evolution. To select the right body, you can hover your mouse over the body and see its properties. To see the vision distance more clearly, in the checkbox beneath "Which body properties to display", you can select "Vision distance" and see the circles around bodies which feature the vision distance.
+After the progress bar finishes, you can click the body the species of which you think will survive the evolution.
+
+If you click a circle, then this circle will turn into a triangle, and the bodies of further generations of the species of this body will also be triangles.
+
+If you click a square-shaped body (the body the species of which the AI thinks will survive the evolution), then the shape of this body will become a rhombus and you will not able to adjust the behaviour of the species of this body. Just like with triangles, the further generations of the species of this body will retain the shape of their parents.
+
+To select the right body, you can hover your mouse over the body and see its properties. And, of course, you can rely upon the AI and select the body the species of which the AI thinks will survive the evolution.
+
+To see the vision distance more clearly, in the checkbox beneath "Which body properties to display", you can select "Vision distance" and see the circles around bodies which feature the vision distance.
 
 Press the triangle-shaped start button to start the evolution.
 
@@ -35,7 +36,7 @@ At the bottom part of the window, there can found three buttons and one drop-dow
 - refresh: refreshing the evolution
 - ▷/⏸︎: press ▷ to start/resume the evolution; press ⏸︎ to pause the evolution
 
-At the right part of the window, there can be found two sections: Selected species and Evolution:
+At the right part of the window, there can be found two sections. The first one is "Selected species" and the second one is "Evolution":
 
 - Selected species:
 
@@ -44,8 +45,8 @@ At the right part of the window, there can be found two sections: Selected speci
   - Don't eat plants: that the species you think will survive the evolution must not eat plants
   - Don't eat bodies: the species you think will survive the evolution must not eat bodies
   - Ignore chasers: the species you think will survive the evolution must not flee from the bodies that are chasing them
-  - Smart plant chasing: check out SMART BEHAVIOUR
-  - Smart body chasing: check out SMART BEHAVIOUR
+  - Smart plant chasing: check out "Smart behaviour"
+  - Smart body chasing: check out "Smart behaviour"
 
 - Evolution:
 
@@ -81,14 +82,14 @@ Each time the body moves, the energy is spent for vision distance and speed (the
 Energy is gained by eating a plant or another body - plant gives 100 points to your energy, and a body gives the whole of its energy.
 
 ARTIFICIAL INTELLIGENCE
--- Where is the AI used?
-AI is used when the process of selecting the species the AI thinks will survive the evolution takes place. One of the bodies has a shape of a square and this square-shaped body is the one that will have its species survive in the evolution.
+-- Where is AI used?
+AI is used for selecting the species it thinks will survive the evolution. One of the bodies has a shape of a square, and this square-shaped body is the one the AI thinks will will have its species survive the evolution.
 
 -- How often does the AI predict the survivor species correctly?
-The averaged percent from 2048 evolutions is 59.8%
+The averaged percent from 2000 evolutions is 60% (note that this percent is taken from evolutions in which there was no species selected by the user).
 
 -- Is the AI used beyond the the process of selecting the species?
-it's not. However, the species selected by the AI occasionally uses the algorithm described in the "Selected species" section of CONTROLS.
+It's not. However, the species selected by the AI occasionally uses the algorithm described in the "Selected species" section of CONTROLS.
 
 SMART CHASING
 - Smart plant chasing:
