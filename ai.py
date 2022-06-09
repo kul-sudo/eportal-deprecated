@@ -14,7 +14,7 @@ def shape_ai_guess():
     select_ai_survivor().shape = SQUARE
 
 def select_ai_survivor() -> object:
-    show_tip('Working on the prediction of AI...')
+    show_tip('Working on the prediction of the AI...')
 
     # Storing the initial states of plants and bodies
     bodies_copy = [deepcopy(body) for body in bodies]
@@ -62,4 +62,4 @@ def select_ai_survivor() -> object:
     
     for body in bodies:
         if body.species_id == max_descendants_by_id:
-            return body # If the user select a body and changes it behaviour while the evolution, then the prediction of AI might be not as precise
+            return body # If the user select a body and changes it behaviour while the evolution, then the prediction of the AI might be not as precise

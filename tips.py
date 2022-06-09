@@ -73,7 +73,7 @@ def select_body():
             selected_body = None
 
 def raise_information_window():
-    try: 
+    try:
         global_items.canvas.tag_raise('information', 'circle')
     except TclError:
         pass
@@ -142,5 +142,5 @@ def show_info():
         estimated_info_box_size[2]+GAP,
         estimated_info_box_size[3]+GAP),
         tags='information', fill='white')
+        
     global_items.canvas.tag_raise(information_text, border)
-  

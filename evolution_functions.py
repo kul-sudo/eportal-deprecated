@@ -86,7 +86,7 @@ def get_survivor_progenitor_properties():
                 'x': survivor_properties['progenitor_x'],
                 'y': survivor_properties['progenitor_y']
             },
-            "prediction of AI was correct": bodies[0].shape in (SQUARE, RHOMBUS),
+            "prediction of the AI was correct": bodies[0].shape in (SQUARE, RHOMBUS),
             "user's prediction was correct": bodies[0].shape in (TRIANGLE, RHOMBUS)
         }
         evolution_status.description = WON
