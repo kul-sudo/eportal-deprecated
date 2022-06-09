@@ -1,6 +1,6 @@
 from random import choice, seed
 from copy import deepcopy
-from time import time
+from time import time, sleep
 
 from config import *
 from global_items import bodies, handle, plants, data_for_smart_body
@@ -8,10 +8,20 @@ from evolution_functions import memory_things
 from crosses import delete_all_crosses
 from window_functions import update_progress, show_progress_bar, delete_progress_bar
 from tips import show_tip
+from global_items import window_commands
+import global_items
 
 @handle
 def shape_ai_guess():
-    select_ai_survivor().shape = SQUARE
+    (sqaure := select_ai_survivor()).shape = SQUARE
+    if window_commands['hold-evolution-start-back']:
+        for k in range(9):
+            global_items.canvas.itemconfig(sqaure.image_reference, fill='black' if k % 2 == 0 else 'white')
+            sleep(0.1)
+            global_items.canvas.update()
+            global_items.canvas.itemconfig(sqaure.image_reference, fill='#%02x%02x%02x' % sqaure.species)
+            sleep(0.1)
+            global_items.canvas.update()
 
 def select_ai_survivor() -> object:
     show_tip('Working on the prediction of the AI...')

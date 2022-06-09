@@ -3,7 +3,7 @@ from tkinter import NORMAL, DISABLED
 from tkinter.ttk import Progressbar
 
 from config import *
-from draw_erase import change_shape, handle_body_properties, prepare_draw_handle
+from draw_erase import change_shape, handle_body_properties
 from global_items import handle, window_commands, bodies, evolution_status, window, checkbuttons_for_triangle
 from tips import info_handle, mouse_clicked_on_body, prepare_info_handle
 
@@ -68,7 +68,6 @@ def user_select_body():
         info_handle()
         return window_commands['run/pause'] == RUN
     prepare_info_handle()
-    prepare_draw_handle()
     while not selected():
         continue
 
@@ -129,5 +128,6 @@ def delete_progress_bar():
     global canvas_window
     try:
         global_items.canvas.delete(canvas_window)
+        global_items.canvas.update()
     except NameError: # NameError is thrown if the progress bar does not exist yet
         pass   

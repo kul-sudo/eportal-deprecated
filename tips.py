@@ -1,7 +1,7 @@
-from global_items import handle, bodies, evolution_status
+from global_items import handle, bodies, evolution_status, window
 from math import dist
 from config import *
-from tkinter import NE, NW, SE, SW, TclError
+from tkinter import GROOVE, LEFT, NE, NW, SE, SW, Label
 from time import time
 
 import global_items
@@ -34,7 +34,11 @@ def mouse_clicked_on_body(body: object):
         show_tip_for_body(body)
 
 def erase_information():
-    global_items.canvas.delete('information')
+    global information
+    try:
+        information.destroy()
+    except NameError:
+        return
 
 GAP = 3
 DELAY = 0.3
@@ -72,19 +76,11 @@ def select_body():
             hovered_start = time()
             selected_body = None
 
-def raise_information_window():
-    try:
-        global_items.canvas.tag_raise('information', 'circle')
-    except TclError:
-        pass
-
-@handle
 def info_handle():
     '''Handling the mouse hovering upon bodies and displaying all of the needed info.'''
     global selected_body, body_info_shown_for
     select_body()
     show_tips()
-    raise_information_window()
     global_items.canvas.update()
     if selected_body is None:
         body_info_shown_for = None
@@ -105,16 +101,16 @@ def show_tips():
         show_tip_for_body(selected_body)
 
 def show_info():
-    global selected_body, information_text, border
+    global selected_body, information
     # Making some corrections to the x and the y of the information window because clicks on the body are considered clicks on the window whenever it overlaps the body, therefore the clicks are not registered
     if selected_body.x >= HALF_EVOLUTION_FIELD_SIZE['width'] and selected_body.y >= HALF_EVOLUTION_FIELD_SIZE['height']:
-        corner, dx, dy = SE, -HALF_BODY_SIZE, -HALF_BODY_SIZE
+        corner, dx, dy = SE, 0, 0
     elif selected_body.x < HALF_EVOLUTION_FIELD_SIZE['width'] and selected_body.y > HALF_EVOLUTION_FIELD_SIZE['height']:
-        corner, dx, dy = SW, HALF_BODY_SIZE, -HALF_BODY_SIZE
+        corner, dx, dy = SW, HALF_BODY_SIZE, 0
     elif selected_body.x <= HALF_EVOLUTION_FIELD_SIZE['width'] and selected_body.y <= HALF_EVOLUTION_FIELD_SIZE['height']:
         corner, dx, dy = NW, HALF_BODY_SIZE, HALF_BODY_SIZE
     else:
-        corner, dx, dy = NE, -HALF_BODY_SIZE, HALF_BODY_SIZE
+        corner, dx, dy = NE, 0, HALF_BODY_SIZE
     
     information_tuple = (
         f"Energy: {round(selected_body.energy)}",
@@ -127,20 +123,17 @@ def show_info():
     )
 
     # Creating the information box
-    information_text = global_items.canvas.create_text(
-        selected_body.x + CANVAS_BORDER + dx,
-        selected_body.y + CANVAS_BORDER + dy,
-        text='\n'.join(information_tuple),
-        tags='information',
-        anchor=corner
+    information = Label(
+        master=window,
+        text='\n'.join(information_tuple), 
+        padx=3, pady=3,
+        justify=LEFT,
+        relief=GROOVE,
+        bg='white'
     )
 
-    estimated_info_box_size = global_items.canvas.bbox(information_text)
-    border = global_items.canvas.create_rectangle(
-        (estimated_info_box_size[0]-GAP,
-        estimated_info_box_size[1]-GAP,
-        estimated_info_box_size[2]+GAP,
-        estimated_info_box_size[3]+GAP),
-        tags='information', fill='white')
-        
-    global_items.canvas.tag_raise(information_text, border)
+    information.place(
+        x=selected_body.x + dx,
+        y=selected_body.y + dy,
+        anchor=corner
+    )

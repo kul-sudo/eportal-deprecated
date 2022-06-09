@@ -6,7 +6,7 @@ from config import *
 from plants import create_plant
 from crosses import delete_old_cross
 from bodies_functions import progenitor_properties
-from draw_erase import prepare_draw_handle, handle_body_properties, update_arrows, update_crosses, update_plants, update_bodies
+from draw_erase import handle_body_properties, update_arrows, update_crosses, update_plants, update_bodies
 from global_items import data_for_smart_body, handle, window_commands, bodies, evolution_status
 from tips import prepare_info_handle, info_handle, erase_information, show_tip, show_evolution_number
 from window_functions import handle_checkbuttons, disable_checkbuttons_checkmarks
@@ -61,7 +61,6 @@ def one_evolution_step():
         evolution_status.description = ON_PAUSE
         show_tip('Put your cursor on a body.')
         prepare_info_handle()
-        prepare_draw_handle()
         while window_commands['run/pause'] == PAUSE:
             handle_body_properties()
             info_handle()

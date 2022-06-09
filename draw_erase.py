@@ -149,57 +149,40 @@ def update_vision_distance_circles():
     for body in bodies:
         draw_one_vision_distance_circle(body)
 
-def prepare_draw_handle():
-    global privious_window_command 
-    privious_window_command = None
-
 # Writing properties of bodies over them
+def display_property(body: object,text: str):
+    center_x, center_y = body.x+CANVAS_BORDER, body.y+CANVAS_BORDER
+    global_items.canvas.create_text(
+        center_x, center_y-HALF_BODY_SIZE,
+        text=text,
+        tags='property',
+        anchor=S
+    )    
 
-def update_body_properties():
-    global privious_window_command
-    new_window_command = window_commands['to-show-selected-property']
-    if evolution_status.description in (USER_SELECTING_BODY, ON_PAUSE):
-        if new_window_command == privious_window_command:
-            return
-        privious_window_command = new_window_command    
+def handle_body_properties():    
     erase_body_properties()
     erase_circles()
     for body in bodies:
-        match new_window_command:
+        match window_commands['to-show-selected-property']:  
             case '"Newly born" if newly born':
-                text = 'Newly born' if body.current_lifetime < NEWLY_BORN_PERIOD and body.generation_n != 0 else ''
+                display_property(body=body, text='Newly born' if body.current_lifetime < NEWLY_BORN_PERIOD and body.generation_n != 0 else '')
             case 'Current energy':
-                text = round(body.energy)
+                display_property(body=body, texgt=round(body.energy))
             case 'Speed':
-                text = round(body.speed*RATIO)
+                display_property(body=body, text=round(body.speed*RATIO))
             case 'Procreation threshold':
-                text = round(body.procreation_threshold)
+                display_property(body=body, text=round(body.procreation_threshold))
             case 'Food preference':
-                text = body.food_preference
+                display_property(body=body, text=body.food_preference)
             case 'Generation number':
-                text = body.generation_n
+                display_property(body=body, text=body.generation_n)
             case 'Amount of bodies with this species':
-                text = len(tuple(filter(lambda body_: body_.species == body.species, bodies)))
+                display_property(body=body, text=len(tuple(filter(lambda body_: body_.species == body.species, bodies))))
             case 'ID of the species':
-                text = body.species_id
+                display_property(body=body, text = body.species_id)
             case 'Vision distance':
                 update_vision_distance_circles()
                 return
-                
-        center_x, center_y = body.x+CANVAS_BORDER, body.y+CANVAS_BORDER
-        global_items.canvas.create_text(
-            center_x, center_y-HALF_BODY_SIZE,
-            text=text,
-            tags='property',
-            anchor=S
-        )
 
 def erase_body_properties():
     global_items.canvas.delete('property')
-
-def handle_body_properties():
-    if window_commands['to-show-selected-property'] == 'Nothing':
-        erase_body_properties()
-        erase_circles()
-    else:
-        update_body_properties()
