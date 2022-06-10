@@ -167,7 +167,7 @@ def handle_body_properties():
             case '"Newly born" if newly born':
                 display_property(body=body, text='Newly born' if body.current_lifetime < NEWLY_BORN_PERIOD and body.generation_n != 0 else '')
             case 'Current energy':
-                display_property(body=body, texgt=round(body.energy))
+                display_property(body=body, text=round(body.energy))
             case 'Speed':
                 display_property(body=body, text=round(body.speed*RATIO))
             case 'Procreation threshold':
