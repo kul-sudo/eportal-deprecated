@@ -11,7 +11,22 @@ import global_items
 
 def change_in_dict(button: object):
     '''Changing the corresponding value in the dictionary.'''
-    window_commands[button.dict_key] = button.variable.get()
+    key = button.dict_key
+    value = button.variable.get()
+    window_commands[key] = value
+    if not value:
+        return
+    match key:
+        case 'dont-eat-plants':
+            window_commands['smart-plant'] = False
+        case 'smart-plant':
+            window_commands['dont-eat-plants'] = False
+        case 'dont-eat-bodies':
+            window_commands['smart-body'] = False
+        case 'smart-body':
+            window_commands['dont-eat-bodies'] = False 
+    for checkbutton in checkbuttons_for_triangle:
+        checkbutton.variable.set(window_commands[checkbutton.dict_key])        
 
 @handle
 def start_pause_button_change_state(action: str): 
