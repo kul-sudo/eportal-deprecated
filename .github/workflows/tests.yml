@@ -10,9 +10,8 @@ jobs:
   build:
     strategy:
       matrix:
-        python-versions: [3.10.4]
-        runs-on: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.runs-on }}
+        python-versions: [3.10.4, 3.10.5]
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Installing Python
@@ -20,5 +19,5 @@ jobs:
         with:
           python-version: ${{matrix.python_versions}}
       - name: Installing dependencies
-        run: |
+        run:
           pip install -r requirements.txt
