@@ -34,7 +34,7 @@ def start_pause_button_change_state(action: str):
     window.update()
 
 @handle
-def pause_mode(enable:bool):
+def pause_mode(enable: bool):
     if enable:
         window_commands['run/pause'] = PAUSE
         global_items.start_pause_button.configure(text=START_TEXT)
@@ -42,7 +42,6 @@ def pause_mode(enable:bool):
         window_commands['run/pause'] = RUN
         global_items.start_pause_button.configure(text=PAUSE_TEXT)
     window.update()
-
 
 def mouse_bind():
     global bind
@@ -64,7 +63,7 @@ def mouse_clicked(event):
         if dist((event.x, event.y), (body.x+CANVAS_BORDER, body.y+CANVAS_BORDER)) <= HALF_BODY_SIZE*1.2:
             change_shape(body, replace_shapes[body.shape])
             mouse_clicked_on_body(body)
-            handle_checkbuttons(NORMAL if body.shape == TRIANGLE else DISABLED)
+            checkbuttons_state(NORMAL if body.shape == TRIANGLE else DISABLED)
             if evolution_status.selected_body is None:
                 evolution_status.selected_body = body
             else:
@@ -87,7 +86,7 @@ def user_select_body():
         continue
 
 @handle
-def handle_checkbuttons(action: str):
+def checkbuttons_state(action: str):
     '''Changing states of buttons which provide the access to the behaviour of the species which is selected by the user.'''
     for checkbutton in checkbuttons_for_triangle:
         checkbutton.configure(state=action)
@@ -112,7 +111,7 @@ def set_checkbuttons_for_evolution():
     '''
     if evolution_status.selected_body is None or evolution_status.selected_body.shape != TRIANGLE:
         disable_checkbuttons_checkmarks()
-        handle_checkbuttons(DISABLED)
+        checkbuttons_state(DISABLED)
 
 def show_progress_bar():
     global progress_bar, canvas_window, previous_value

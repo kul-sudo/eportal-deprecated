@@ -7,7 +7,7 @@ from random import uniform, randrange
 
 from config import *
 
-window_commands: dict[str, bool | int] = {
+window_commands = {
     'run/pause': PAUSE,
     'to-show-selected-property': 'Nothing',
     'hold-evolution-start-back': True,

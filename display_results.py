@@ -7,7 +7,7 @@ from global_items import handle, bodies, evolution_status
 @handle
 def display_results():
     write_text_eventual = ''
-    if evolution_status.description == WON:
+    if bodies != []:
         bodies_amount = len(bodies)
         bodies_zero_element_shape = bodies[0].shape
 

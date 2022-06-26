@@ -101,6 +101,9 @@ ON_PAUSE = 5
 FROM = 0
 TO = 1
 
+WON = 0
+DRAW = 1
+
 # Related to plants
 PLANT_ENERGY = 100
 PLANT_PREFERENCE_CHANCE = 0.5 # The chance that the body will prefer eating plant
@@ -131,7 +134,7 @@ ENERGY_FOR_MOVING = 0.0001*PLANT_ENERGY if TEST_MODE is False else 534354534*PLA
 PLANT_COLOUR = (14, 209, 69) # Not defining the colour, but saying that the RGB of the plant is this one
 TIMES_ATTEMPTED = 1000 # Limit of times for trying to place a plant on the window
 PLANT_SIZE_RATIO = 25 # Higher => smaller
-PLANT_CHANCE = 0.2 if TEST_MODE is False else 0 # The chance (percent = PLANT_CHANCE * 100) of Plant emerging
+PLANT_CHANCE = 0.1 if TEST_MODE is False else 0 # The chance (percent = PLANT_CHANCE * 100) of a plant emerging
 INITIALLY_PLANTED = BODIES_AMOUNT*3 if TEST_MODE is False else 100 # Amount of plants that have to be planted initially
 
 # Crosses
@@ -140,15 +143,6 @@ CROSS_LIFETIME = 3 # Lifetime of a cross
 # Cross appearance
 CROSS_SIZE_RATIO = 3 # Higher => smaller
 
-# AI
-# Standard deviations
-RATIO_BODY_PROPERTIES = DEVIATION_OF_RANDOM_PROPERTIES_ZERO_GENERATION/SQRT_OF_THREE
-SIGMA_VISION_DISTANCE = RATIO_BODY_PROPERTIES*VISION_DISTANCE
-SIGMA_BODY_SPEED = RATIO_BODY_PROPERTIES*BODY_SPEED
-SIGMA_PROCREATION_THRESHHOLD = RATIO_BODY_PROPERTIES*PROCREATION_THRESHOLD
-
-WON = 0
-DRAW = 1
 
 # Display results
 RATIO = 100 # Making the results that are displayed more readable

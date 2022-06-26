@@ -5,8 +5,8 @@ from plants import create_initial_plants, create_plant_image, delete_all_plants
 from draw_erase import erase_body_properties, erase_circles, update_arrows, update_bodies, update_crosses, update_plants
 from crosses import create_cross_image, delete_all_crosses
 from ai import shape_ai_guess
-from window_functions import delete_progress_bar, set_checkbuttons_for_evolution, disable_checkbuttons_checkmarks, handle_checkbuttons, restore_checkbuttons_checkmarks, start_pause_button_change_state, pause_mode, user_select_body, mouse_bind, mouse_unbind
-from evolution_functions import one_evolution, get_survivor_progenitor_properties
+from window_functions import delete_progress_bar, set_checkbuttons_for_evolution, disable_checkbuttons_checkmarks, checkbuttons_state, restore_checkbuttons_checkmarks, start_pause_button_change_state, pause_mode, user_select_body, mouse_bind, mouse_unbind
+from evolution_functions import one_evolution
 from display_results import display_results
 from global_items import ExceptionToRestart, window_commands, evolution_status
 from tips import show_tip, show_evolution_number, erase_information
@@ -21,7 +21,7 @@ def evolution():
         # try-except is required for the start button to work as a refresh button if the evolution is currently going
         try:
             evolution_status.description = CONTROL_PREPARATION
-            handle_checkbuttons(DISABLED)
+            checkbuttons_state(DISABLED)
             disable_checkbuttons_checkmarks()
             start_pause_button_change_state(DISABLED)
             evolution_status.description = DELETE_EVERYTHING
@@ -63,10 +63,9 @@ def evolution():
             show_evolution_number()
             one_evolution()
             start_pause_button_change_state(DISABLE)
-            handle_checkbuttons(DISABLED)
+            checkbuttons_state(DISABLED)
             disable_checkbuttons_checkmarks()
             '''get_survivor_progenitor_properties() changes the status with "draw" or "won"'''
-            get_survivor_progenitor_properties()
             if window_commands['display-properties']:
                 display_results()
         except ExceptionToRestart:

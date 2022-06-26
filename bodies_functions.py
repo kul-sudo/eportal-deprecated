@@ -66,4 +66,4 @@ def delete_all_bodies():
     progenitor_properties.clear()
 
 def no_triangles():
-    return [body for body in bodies if body.shape == TRIANGLE] == []
+    return tuple(filter(lambda body: body.shape == TRIANGLE, bodies)) == ()

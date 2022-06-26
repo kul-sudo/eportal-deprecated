@@ -182,7 +182,7 @@ def window_handling(): # Creating and handling the window
         labelanchor='n'
     )).pack(side=RIGHT, padx=5)
 
-    # Creating a OptionMenu for selecting which properties have to be shown over the bodies
+    # Creating an OptionMenu for selecting which properties have to be shown over the bodies
     def handle_selection(choice: str):
         window_commands['to-show-selected-property'] = choice
 
@@ -207,7 +207,7 @@ def window_handling(): # Creating and handling the window
         *menu_options,
         direction='above',
         command=handle_selection
-    )).pack(anchor='e')
+    )).pack()
     properties_menu.configure(width=30)
 
     # Creating the help button
