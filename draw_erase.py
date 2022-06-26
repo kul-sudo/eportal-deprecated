@@ -27,12 +27,12 @@ def update_bodies():
         match body.shape:
             case config.CIRCLE:
                 body.image_reference = create_shape_bodies(body, global_items.canvas.create_oval)
+            case config.TRIANGLE:
+                body.image_reference = draw_body_triangle(body)
+            case config.RHOMBUS:
+                body.image_reference = draw_body_rhombus(body)
             case config.SQUARE:
                 body.image_reference = create_shape_bodies(body, global_items.canvas.create_rectangle)
-            case config.TRIANGLE:
-                draw_body_triangle(body)
-            case config.RHOMBUS:
-                draw_body_rhombus(body)
 
 # Plants
 drawn_plants: set[object] = set()
