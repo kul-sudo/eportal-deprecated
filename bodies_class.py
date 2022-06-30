@@ -197,7 +197,8 @@ class Body: # The class of the Bodies
             Condition2 = not any(
                 body.status.description == FOLLOWING_PLANT and
                 body.status.parameter is plant and
-                body.species == self.species
+                body.species == self.species and
+                distance_between_objects(self, body) <= self.vision_distance
                 for body in other_bodies
             )
             if not Condition2:
@@ -266,7 +267,7 @@ class Body: # The class of the Bodies
         # Condition1: The body has different species
         # Condition2: The body has a lower amount of energy
         # Condition3: The body is within the vision distance
-        # Condition4: The body is not being chased by any of the bodies with the same species
+        # Condition4: The body is not being chased by any of the bodies with the same species which is within the vision distance
         other_bodies = set(bodies) - {self}
 
         for another_body in other_bodies:
@@ -285,7 +286,8 @@ class Body: # The class of the Bodies
             Condition4 = not any(
                 body.status.description == FOLLOWING_BODY and
                 body.status.parameter is another_body and
-                body.species == self.species
+                body.species == self.species and
+                distance_between_objects(self, body) <= self.vision_distance
                 for body in other_bodies 
             )
             if not Condition4:
