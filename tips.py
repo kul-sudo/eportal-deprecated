@@ -18,13 +18,13 @@ def show_tip_for_body(body: object):
     '''Display a tip according to the shape of body.'''
     match body.shape:
         case global_items.CIRCLE:
-            tip = 'Click on the body the species of which you think will turn out to survive the evolution.\nThe body you select will become a triangle.'
+            tip = 'Click the body the species of which you think will turn out to survive the evolution.\nThe body you select will become a triangle.'
         case global_items.TRIANGLE:
-            tip = 'Click on this body to turn it back into a circle and cancel your guess.'
+            tip = 'Click this body to turn it back into a circle and cancel your guess.'
         case global_items.SQUARE:
-            tip = 'Click on this body to turn it into a rhombus. This rhombus means that\nboth AI and you think the species of this body will survive the evolution.'
+            tip = 'Click this body to turn it into a rhombus. This rhombus means that\nboth AI and you think the species of this body will survive the evolution.'
         case global_items.RHOMBUS:
-            tip = 'Click on this body to turn it back into a square and cancel\nyour guess.'
+            tip = 'Click this body to turn it back into a square and cancel\nyour guess.'
     show_tip(tip)
 
 def mouse_clicked_on_body(body: object):
@@ -96,7 +96,7 @@ def show_tips():
     if evolution_status.description == ON_PAUSE:
        return
     if selected_body is None:
-        show_tip('Put your cursor on a body.\nYou can click the body the species of which you think will survive the evolution.')
+        show_tip('Place your cursor on a body.\nYou can click the body the species of which you think will survive the evolution.')
     else:
         show_tip_for_body(selected_body)
 

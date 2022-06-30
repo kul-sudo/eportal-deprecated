@@ -222,8 +222,8 @@ def window_handling(): # Creating and handling the window
         window_commands['refresh'] = True
 
     global_items.refresh_button = Button(
-        text='refresh',
         width=6,
+        text='refresh',
         command=refresh_request
     )
     global_items.refresh_button.pack(side=RIGHT, pady=8, padx=2)
@@ -240,9 +240,9 @@ def window_handling(): # Creating and handling the window
     global_items.start_pause_button = Button(
         width=1,
         text=START_TEXT,
-        command=start_pause_request,
         state=DISABLED,
-        font=Font(size=25)
+        font=Font(size=25),
+        command=start_pause_request
     )
     global_items.start_pause_button.pack(side=RIGHT, pady=8, padx=2)
 

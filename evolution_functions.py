@@ -59,7 +59,7 @@ def one_evolution_step():
         disable_checkbuttons_checkmarks()
     if window_commands['run/pause'] == PAUSE:
         evolution_status.description = ON_PAUSE
-        show_tip('Put your cursor on a body.')
+        show_tip('Place your cursor on a body.')
         prepare_info_handle()
         while window_commands['run/pause'] == PAUSE:
             handle_body_properties()

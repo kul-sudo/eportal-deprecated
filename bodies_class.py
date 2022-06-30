@@ -182,14 +182,15 @@ class Body: # The class of the Bodies
 
     def find_plant(self) -> tuple[str, object] | None:
         '''Finding the plant which is suitable for self.'''
+        
         feasible_plants = []
         # feasible_plants consists of plants that are qualified as suitable for self by the following conditions:
         # Condition1: The plant is within the vision distance
-        # Condition2: The plant is not going to be eaten by any of the bodies with the same species
+        # Condition2: The plant is not going to be eaten by any of the bodies with the same species which is within the vision distance
+
         other_bodies = set(bodies) - {self}
         for plant in global_items.plants:
-            Condition1 = distance_between_objects(self, plant) -\
-                        global_items.half_plant_size <= self.vision_distance
+            Condition1 = distance_between_objects(self, plant) - global_items.half_plant_size <= self.vision_distance
             if not Condition1:
                 continue
 
@@ -201,7 +202,8 @@ class Body: # The class of the Bodies
             )
             if not Condition2:
                 continue
-            # If all of the conditions are False, the plant can be appended to feasible_plants
+            
+            # If all of the conditions are True, the plant can be appended to feasible_plants
             feasible_plants.append(plant)
 
         if feasible_plants == []:
