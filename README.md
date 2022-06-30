@@ -32,7 +32,7 @@ If you click a circle, then this circle will turn into a triangle, and the bodie
 
 If you click a square-shaped body (the body the species of which the AI thinks will survive the evolution), then the shape of this body will become a rhombus and you will not able to adjust the behaviour of the species of this body. Just like with triangles, the further generations of the species of this body will retain the shape of their parents.
 
-To select the right body, you can hover your mouse over the body and see its properties. And, of course, you can rely upon the AI and select the body the species of which the AI thinks will survive the evolution.
+To select the right body, you can hover your mouse cursor over the body and see its properties. And, of course, you can rely upon the AI and select the body the species of which the AI thinks will survive the evolution.
 
 To see the vision distance more clearly, in the checkbox beneath "Which body properties to display", you can select "Vision distance" and see the circles around bodies which feature the vision distance.
 <br>
