@@ -1,7 +1,7 @@
 ![logo](https://user-images.githubusercontent.com/95244851/172011644-34148bdb-7509-4fec-8ba4-ce3158b5f1bf.png)
 
 # What is eportal?
-Eportal can be cosidered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the [AI](#ai) in guessing which species will survive the evolution.
+Eportal can be considered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the [AI](#ai) in guessing which species will survive the evolution.
 <br>
 
 When the evolution begins, great battles begin along with it; bodies do their best to populate as much room as possible for their species to win; some of them become passive, eating plants and procreating, some of them become aggressive, trying to attack the bodies of other species.
