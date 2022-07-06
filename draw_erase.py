@@ -150,7 +150,7 @@ def update_vision_distance_circles():
         draw_one_vision_distance_circle(body)
 
 # Writing properties of bodies over them
-def display_property(body: object,text: str):
+def display_property(body: object, text: str):
     center_x, center_y = body.x+CANVAS_BORDER, body.y+CANVAS_BORDER
     global_items.canvas.create_text(
         center_x, center_y-HALF_BODY_SIZE,

@@ -264,7 +264,7 @@ class Body: # The class of the Bodies
         '''Finding the body which is suitable for self.'''
         feasible_bodies = []
         # feasible_bodies consists of bodies that are qualified as suitable for self by the following conditions:
-        # Condition1: The body has different species
+        # Condition1: The body has a different species
         # Condition2: The body has a lower amount of energy
         # Condition3: The body is within the vision distance
         # Condition4: The body is not being chased by any of the bodies with the same species which is within the vision distance

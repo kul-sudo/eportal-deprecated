@@ -127,8 +127,8 @@ PLACEMENT_GAP = 2.5
 
 BODY_SPEED = 0.6
 BODIES_AMOUNT = 20 if TEST_MODE is False else 1 # Amount of Bodies on the window
-ENERGY_FOR_VISION = 0.0001*PLANT_ENERGY if TEST_MODE is False else 534354534*PLANT_ENERGY # Energy spent for vision
-ENERGY_FOR_MOVING = 0.0001*PLANT_ENERGY if TEST_MODE is False else 534354534*PLANT_ENERGY # Energy spent for moving
+ENERGY_FOR_VISION = 0.00007*PLANT_ENERGY if TEST_MODE is False else 534354534*PLANT_ENERGY # Energy spent for vision
+ENERGY_FOR_MOVING = 0.007*PLANT_ENERGY if TEST_MODE is False else 534354534*PLANT_ENERGY # Energy spent for moving
 
 # Plants
 PLANT_COLOUR = (14, 209, 69) # Not defining the colour, but saying that the RGB of the plant is this one
