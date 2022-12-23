@@ -117,5 +117,5 @@ It's not. However, the species selected by the AI occasionally uses the algorith
 
 * Smart body chasing:
   * Bodies calculate if it is profitable to spend a certain amount of energy to get a certain amount of energy from a body. If the spent energy is less than the energy that can be received, then the body does not attempt to catch that body
-  * If the body which is meant to be caught will die while it is being caught, then nothing is done
+  * If the body which is meant to be caught dies while it is being caught, then nothing is done
   * If a body from a different species is following that body, if it can catch that body sooner, then nothing is done
