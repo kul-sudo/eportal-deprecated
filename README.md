@@ -3,6 +3,12 @@
 # IF YOU WANT TO RUN MAIN.PY
 ONLY SUPPORTS >= PYTHON 3.10
 
+# Linux: X Error of failed request: BadLength (poly request too large or internal Xlib length error)
+[the following way]: https://github.com/LukeSmithxyz/st/issues/130
+You can fix this error in [the following way]
+
+Just do ```sudo apt install unifont```
+
 # What is eportal?
 Eportal can be considered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the [AI](#ai) guessing which species will survive the evolution.
 <br>
