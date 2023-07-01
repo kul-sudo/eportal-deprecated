@@ -7,7 +7,7 @@ ONLY SUPPORTS >= PYTHON 3.10
 [the following way]: https://github.com/LukeSmithxyz/st/issues/130#issuecomment-1008550245
 You can fix this error in [the following way].
 
-Just do ```sudo apt install unifont```
+Just do ```sudo apt install unifont```.
 
 # What is eportal?
 Eportal can be considered a simulator, because it demonstrates how evolution works, and a game, because you can compete with the [AI](#ai) guessing which species will survive the evolution.
