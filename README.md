@@ -4,7 +4,7 @@
 ONLY SUPPORTS >= PYTHON 3.10
 
 # Linux: X Error of failed request: BadLength (poly request too large or internal Xlib length error)
-[the following way]: https://github.com/LukeSmithxyz/st/issues/130
+[the following way]: https://github.com/LukeSmithxyz/st/issues/130#issuecomment-1008550245
 You can fix this error in [the following way]
 
 Just do ```sudo apt install unifont```
