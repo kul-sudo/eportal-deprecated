@@ -1,3 +1,5 @@
+# This version is deprecated. Please switch to https://github.com/kul-sudo/eportal
+
 ![logo](https://user-images.githubusercontent.com/95244851/172011644-34148bdb-7509-4fec-8ba4-ce3158b5f1bf.png)
 
 # IF YOU WANT TO RUN MAIN.PY
